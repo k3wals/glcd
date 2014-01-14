@@ -35,6 +35,7 @@ Works with:
 - PCD8544 based LCDs, e.g Nokia 3110 and 5110 LCDs
 - ST7565R / ST7565P serial interface
 - NT75451 parallel interface (used on NGX BlueBoards)
+- Solomon Systech SSD1306
 
 The following Newhaven displays have been physically tested with and confirmed working:
 
@@ -51,6 +52,7 @@ MCUs supported:
 - NXP LPC111x ARM Cortex-M0
 - NXP LPC11Uxx ARM Cortex-M0
 - ST STM32 F0 ARM Cortex-M0
+- ST STM32 L1 ARM Cortex-M0
 - Microchip PIC24H (and probably other 16-bit MCUs)
 
 Development boards tested on (with on-board LCD):
@@ -76,6 +78,7 @@ Pick microcontroller type (pick one only):
 	GLCD_DEVICE_LPX11UXX
 	GLCD_DEVICE_AVR8
 	GLCD_DEVICE_STM32F0XX
+	GLCD_DEVICE_STM32L1XX
 	GLCD_DEVICE_PIC24H
 
 Pick LCD controller type (pick one only):
@@ -83,6 +86,7 @@ Pick LCD controller type (pick one only):
 	GLCD_CONTROLLER_PCD8544
 	GLCD_CONTROLLER_ST7565R
 	GLCD_CONTROLLER_NT75451
+	GLCD_CONTROLLER_SSD1306
 
 For ST7565P controllers, treat as ST7565R. For most if not all parts here, they behave the same way.
 

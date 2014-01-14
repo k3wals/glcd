@@ -68,6 +68,13 @@
 	extern void delay_ms(uint32_t ms);
 	#define PROGMEM
 
+#elif defined(GLCD_DEVICE_STM32L1XX)
+	#include <stm32l1xx.h>
+	#include <stm32l1xx_gpio.h>
+	#include "devices/inc/STM32L1xx.h"
+	extern void delay_ms(uint32_t ms);
+	#define PROGMEM
+
 #elif defined(GLCD_DEVICE_PIC24H)
 	#define FCY (FOSC/2)
 	#include <stdint.h>
@@ -90,6 +97,9 @@
 	
 #elif defined(GLCD_CONTROLLER_NT75451)
 	#include "controllers/NT75451.h"
+
+#elif defined(GLCD_CONTROLLER_SSD1306)
+	#include "controllers/SSD1306.h"
 		
 #else
 	#error "Controller not supported or defined"
@@ -288,8 +298,8 @@ typedef struct {
 	font_table_type_t table_type;
 } glcd_FontConfig_t;
 
-extern uint8_t *glcd_buffer_selected;
-extern glcd_BoundingBox_t *glcd_bbox_selected;
+//extern uint8_t *glcd_buffer_selected;
+//extern glcd_BoundingBox_t *glcd_bbox_selected;
 extern glcd_FontConfig_t font_current;
 
 #endif
